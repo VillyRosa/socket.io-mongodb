@@ -9,29 +9,29 @@
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css" rel="stylesheet"
     integrity="sha384-Zenh87qX5JnK2Jl0vWa8Ck2rdkQ2Bzep5IDxbcnCeuOxjzrPF/et3URy9Bv1WTRi" crossorigin="anonymous">
 
-  <title>AluraDocs</title>
+  <title>AluraDocs | Login</title>
 </head>
 
 <body class="col-lg-6 my-3 mx-auto">
   <header>
     <h1 class="text-center display-2 mb-4">AluraDocs</h1>
-
-    <button id="botao-logout" class="btn btn-outline-primary position-absolute top-0 end-0 mt-5 me-5">Logout</button>
   </header>
 
   <main class="w-75 mx-auto">
-    <div id="lista-documentos" class="list-group mb-4"></div>
+    <hr>
+    <h2 class="display-6 mb-3">Login</h2>
 
-    <form id="form-adiciona-documento" class="row g-3">
-      <div class="col-md-6">
-        <label class="visually-hidden" for="input-documento">Nome do documento</label>
-        <input type="text" class="form-control" id="input-documento" placeholder="Documento..." required>
+    <form id="form-login">
+      <div class="mb-3">
+        <label for="input-usuario" class="form-label">Usuário</label>
+        <input type="text" class="form-control" id="input-usuario" required>
       </div>
-
-      <div class="col-md-6">
-        <button type="submit" class="btn btn-primary w-100">Adicionar documento</button>
+      <div class="mb-3">
+        <label for="input-senha" class="form-label">Senha</label>
+        <input type="password" class="form-control" id="input-senha" required>
       </div>
-    </form>
+      <button type="submit" class="btn btn-primary mb-3">Login</button>
+      <p>Não possui usuário? <a href="/cadastro/index.html" class="link-primary">Faça o cadastro</a></p>
   </main>
 
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js"
@@ -39,7 +39,7 @@
     crossorigin="anonymous"></script>
 
   <script src="/socket.io/socket.io.js"></script>
-  <script src="./index.js" type="module"></script>
+  <script src="./login.js" type="module"></script>
 </body>
 
 </html>

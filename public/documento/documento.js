@@ -7,11 +7,22 @@ const tituloPagina = document.querySelector('title');
 const textoEditor = document.querySelector('#editor-texto');
 const tituloDocumento = document.querySelector('#titulo-documento');
 const botaoExcluir = document.querySelector('#excluir-documento');
+const listaUsuariosConectados = document.querySelector('#usuarios-conectados');
 
 tituloPagina.textContent = nomeDocumento || 'Documento sem título';
 tituloDocumento.textContent = nomeDocumento || 'Documento sem título';
 
-selecionarDocumento(nomeDocumento);
+function tratarAutorizacaoSucesso(payloadToken) {
+  selecionarDocumento({ nomeDocumento, nomeUsuario: payloadToken.nomeUsuario });
+}
+
+function atualizarInterfaceUsuarios(usuariosNoDocumento) {
+  listaUsuariosConectados.innerHTML = '';
+
+  usuariosNoDocumento.forEach((usuario) => {
+    listaUsuariosConectados.innerHTML += `<li class="list-group-item">${usuario}</li>`;
+  });
+}
 
 function atualizaTextoEditor(texto) {
   textoEditor.value = texto;
@@ -33,4 +44,4 @@ botaoExcluir.addEventListener('click', () => {
   emitirExcluirDocumento(nomeDocumento);
 });
 
-export { atualizaTextoEditor, alertarERedirecionar };
+export { atualizaTextoEditor, alertarERedirecionar, tratarAutorizacaoSucesso, atualizarInterfaceUsuarios };

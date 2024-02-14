@@ -17,11 +17,21 @@
     <h1 class="display-4 mb-4 text-center" id="titulo-documento">Documento sem título</h1>
   </header>
 
-  <main class="w-75 mx-auto">
-    <textarea id="editor-texto" class="form-control mb-4" style="height: 400px; resize: none;"></textarea>
+  <main class="container-md">
+    <div class="row mb-3">
+      <div class="col-sm-8 col-md-9">
+        <textarea id="editor-texto" class="form-control mb-4" style="height: 400px; resize: none;"></textarea>
+      </div>
 
-    <div class="d-flex justify-content-between">
-      <a href="index.html" class="btn btn-primary">Voltar</a>
+      <div class="col-sm-4 col-md-3">
+        <h2 class="fs-5 fw-normal mb-3">Usuários conectados:</h2>
+
+        <ul class="list-group" id="usuarios-conectados"></ul>
+      </div>
+    </div>
+
+    <div class="col-sm-8 col-md-9 d-flex justify-content-between">
+      <a href="/index.html" class="btn btn-primary">Voltar</a>
       <button id="excluir-documento" class="btn btn-outline-danger">Excluir documento</button>
     </div>
   </main>
